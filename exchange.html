@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquidity Table</title>
+<style>
+    body {
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(315deg, #1f011e 0%,#011c4a 94%);
+}
+  h1,
+p {
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 3rem auto;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-top: 25px; /* Add padding to create gap between rows */
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid antiquewhite; /* Add bottom border to th */
+}
+
+th {
+    background-color: #045387;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-bottom: 0.5px solid white; /* Add bottom border to th */
+}
+
+tbody tr:hover {
+    background-color: rgb(5, 63, 92); /* Change background color on hover */
+}
+
+  .high-liquidity {
+    color: green;
+  }
+  .medium-liquidity {
+    color: orange;
+  }
+  .low-liquidity {
+    color: red;
+  }
+
+  @media only screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    th,
+    td {
+        font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+}
+</style>
+</head>
+<body>
+
+<h2>Liquidity Table</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Exchange</th>
+      <th>Score</th>
+      <th>Trading Volume (24h)</th>
+      <th>Avg. Liquidity</th>
+      <th>Weekly Visits</th>
+      <th># Markets</th>
+      <th># Coins</th>
+      <th>Fiat Supported</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Binance</td>
+      <td>9.5</td>
+      <td>$5,000,000,000+</td>
+      <td class="high-liquidity">High</td>
+      <td>10,000,000+</td>
+      <td>500+</td>
+      <td>200+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Coinbase Pro</td>
+      <td>9.0</td>
+      <td>$2,500,000,000+</td>
+      <td class="high-liquidity">High</td>
+      <td>7,000,000+</td>
+      <td>300+</td>
+      <td>100+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Kraken</td>
+      <td>8.8</td>
+      <td>$1,800,000,000+</td>
+      <td class="high-liquidity">High</td>
+      <td>5,000,000+</td>
+      <td>200+</td>
+      <td>80+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Bitfinex</td>
+      <td>8.5</td>
+      <td>$1,500,000,000+</td>
+      <td class="high-liquidity">High</td>
+      <td>4,000,000+</td>
+      <td>150+</td>
+      <td>60+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Bittrex</td>
+      <td>8.2</td>
+      <td>$1,200,000,000+</td>
+      <td class="medium-liquidity">Medium</td>
+      <td>3,500,000+</td>
+      <td>120+</td>
+      <td>50+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Huobi Global</td>
+      <td>8.0</td>
+      <td>$1,000,000,000+</td>
+      <td class="medium-liquidity">Medium</td>
+      <td>3,000,000+</td>
+      <td>100+</td>
+      <td>40+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>OKEx</td>
+      <td>7.8</td>
+      <td>$900,000,000+</td>
+      <td class="medium-liquidity">Medium</td>
+      <td>2,500,000+</td>
+      <td>80+</td>
+      <td>30+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>KuCoin</td>
+      <td>7.5</td>
+      <td>$700,000,000+</td>
+      <td class="medium-liquidity">Medium</td>
+      <td>2,000,000+</td>
+      <td>70+</td>
+      <td>25+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Gate.io</td>
+      <td>7.2</td>
+      <td>$500,000,000+</td>
+      <td class="low-liquidity">Low</td>
+      <td>1,500,000+</td>
+      <td>50+</td>
+      <td>20+</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Bitstamp</td>
+      <td>7.0</td>
+      <td>$400,000,000+</td>
+      <td class="low-liquidity">Low</td>
+      <td>1,000,000+</td>
+      <td>40+</td>
+      <td>15+</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

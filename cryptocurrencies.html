@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Cryptocurrency Prices by Market Cap</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+  /* General styling for body */
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(315deg, #1f011e 0%,#011c4a 94%);
+}
+
+/* Styling for header */
+header {
+  background-color: #033757; /* Change to blue color */
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  margin: 0;
+}
+
+.nav {
+  padding: 10px;
+  flex-basis: 100%;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav ul li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.nav ul li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 17px;
+  border-radius: 15px;
+  /*Addborderradiusformodernlook*/
+  /* background: linear-gradient(135deg, #54a0eb, #0056b3); */
+  /*Gradientbackground*/
+  /* box-shadow: 0 4px 6px rgba(174, 200, 227, 0.1); */
+  /*Boxshadowfordepth*/
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.nav ul li a:hover {
+  transform: translateY(-3px); /* Move element up on hover */
+  /* box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);  */
+}
+
+/* Change the text style */
+.nav ul li a {
+  font-weight: bolder; /* Bold font weight */
+  font-size: 1.2rem; /* Font size */
+  letter-spacing: 1px; /* Letter spacing */
+}
+ /* Style for the button */
+ .sign-up {
+  
+  background-color: #138c72; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  text-decoration: none; /* Remove default button underline */
+  display: block; /* Make button fill the width of its container */
+  width: 100%; /* Make button fill the width of its container */
+  text-align: center; /* Center align text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-family: Arial, sans-serif; /* Set font family */
+      font-size: 16px; /* Set font size */
+      font-weight: bold; /* Set font weight */
+     
+}
+
+/* Style for button hover state */
+.sign-up:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for button active state */
+.sign-up:active {
+  background-color: #004080; /* Even darker blue when button is clicked */
+}
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  .nav {
+    flex-basis: auto;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+}
+
+  /* Additional media query for tablets */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav ul li {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+
+/* Media Query for small devices */
+h1,
+p {
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 3rem auto;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-top: 25px; /* Add padding to create gap between rows */
+    padding-bottom: 30px;
+    border-bottom: 0.5px solid antiquewhite; /* Add bottom border to th */
+}
+
+th {
+    background-color: #045387;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-bottom: 0.5px solid white; /* Add bottom border to th */
+}
+
+tbody tr:hover {
+    background-color: rgb(5, 63, 92); /* Change background color on hover */
+}
+
+img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px; /* Add space between image and text */
+    vertical-align: middle; /* Align images vertically */
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    th,
+    td {
+        font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+}
+
+/* Media Query for screens with width 400px */
+@media only screen and (max-width: 400px) {
+    /* Adjust styles for 400px width */
+    header {
+        padding: 10px; /* Reduce padding */
+    }
+    .nav ul li a {
+        padding: 10px; /* Reduce padding */
+        font-size: 1rem; /* Decrease font size */
+    }
+}
+
+/* Media Query for screens with width 600px */
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    /* Adjust styles for 600px width */
+    header {
+        padding: 15px; /* Adjust padding */
+    }
+    .nav ul li a {
+        padding: 15px; /* Adjust padding */
+        font-size: 1.1rem; /* Adjust font size */
+    }
+}
+.footer {
+    /* background-color: #414141; */
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-links ul li a {
+    color: #a19797; /* Change to the color you want */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer-links ul li a:hover {
+    color: #f98d12; /* Change to the hover color you want */
+  }
+  
+  .footer-social a {
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    display: conte;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-bottom .dropdown {
+    margin-left: 20px;
+  }
+  
+  .footer-social a i {
+    color: #ffffff; /* Default color */
+    font-size: 34px; /* Set the font size of the icons */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    margin: 1rem;
+  }
+  
+  .footer-social a:hover i {
+    /* Change to your desired color on hover */
+    transform: scale(1.2); /* Scale the icon to 120% on hover */
+  }
+  .footer-nav ul {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-nav li {
+    margin-right: 20px; /* Add spacing between list items */
+  }
+  
+  .footer-nav li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  .footer-nav {
+    text-align: center; /* Center-align the content */
+  }
+  
+  .footer-nav ul {
+    display: inline-block; /* Display the list items inline */
+    padding: 0;
+  }
+  
+  .footer-nav li {
+    display: inline; /* Display the list items inline */
+    margin: 0 10px; /* Add some margin between the list items */
+  }
+  
+  .footer-nav select {
+    margin: 0 10px; /* Add margin to the dropdown */
+  }
+  
+  .dropdown {
+    display: inline-block; /* Display the dropdown inline */
+    vertical-align: middle; /* Align the dropdown vertically */
+  }
+  .footer-nav a {
+    color: grey; /* Change the color to red */
+    text-decoration: none; /* Remove underline */
+  }
+  .dropdown select {
+    border: 1px solid #ccc; /* Add gray border */
+    padding: 5px; /* Add padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Add border radius */
+    background-color: #fff; /* Set background color */
+  }
+  
+  .dropdown select:hover {
+    border-color: #999; /* Change border color on hover */
+  }
+  
+  /* footer legal */
+  .footer-legal {
+    text-align: center;
+    /* margin-left: 30rem; */
+    margin-top: 2rem;
+    color: gray;
+    height: 6rem;
+  }
+  .footer-legal ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .footer-legal li {
+    display: inline-block; /* Display items in the same line */
+    margin-right: 10px; /* Add space between items */
+  }
+  
+  .footer-legal li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .footer-legal li:nth-child(4),
+  .footer-legal li:nth-child(5) {
+    display: block; /* Display spans in a new line */
+  }
+  
+    
+</style>
+  </head>
+  <body>
+    <header data-aos="fade-in" data-aos-duration="1000">
+      <h1 class="logo">CoinMarketCap</h1>
+      <nav class="nav" data-aos="fade-in" data-aos-duration="1000">
+        <ul>
+          <li><a href="#cryptocurrency">Cryptocurrencies</a></li>
+          <li><a href="#exchange">Exchanges</a></li>
+          <li><a href="#aboutus">Community</a></li>
+          <li><a href="#aboutus">Learn</a></li>
+          <li>
+            <a href>
+              <button class="sign-up">
+                Sign up
+              </button>
+            </a>
+          </li>
+
+          <li>
+            <a href>
+              <button class="sign-up">
+                Log In
+              </button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="crypto-section parallax-section">
+      <h1>Today's Cryptocurrency Prices by Market Cap</h1>
+      <p>The global crypto market cap is $2.49T, a 1.05% increase over the last
+        day. </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>1h%</th>
+            <th>24h%</th>
+            <th>7d%</th>
+            <th>Market Cap</th>
+            <th>Value (24h)</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="./images/mercury-1a-607x472.jpg" alt="Bitcoin">
+              Mercury</td>
+            <td>1.5%</td>
+            <td>2.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td><img src="./images/nasa-2W-QWAC0mzI-unsplash.jpg" alt="Bitcoin">
+              Venus</td>
+            <td>2.5%</td>
+            <td>1.3%</td>
+            <td>6.6%</td>
+            <td>$2,000,000,000</td>
+            <td>$40,000</td>
+            <td>20,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td><img src="./images/mars.jpg" alt="Bitcoin"> Mars</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td><img src="./images/jupiter-with-rings.webp" alt="Bitcoin">
+              Jupiter</td>
+            <td>4.5%</td>
+            <td>3.3%</td>
+            <td>7.6%</td>
+            <td>$9,000,000,000</td>
+            <td>$30,000</td>
+            <td>58,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td><img src="./images/saturn-7242341_1280-1.jpg" alt="Bitcoin">
+              Saturn </td>
+            <td>7.5%</td>
+            <td>3.3%</td>
+            <td>6.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td><img src="./images/Neptune-featureIMG.jpg.webp" alt="Bitcoin">
+              Neptune</td>
+            <td>2.5%</td>
+            <td>1.3%</td>
+            <td>5.3%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td><img src="./images/img1.png" alt="Bitcoin"> SOME</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td><img src="./images/img10.png" alt="Bitcoin"> BOPE</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td><img src="./images/img2.png" alt="Bitcoin"> BOD</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td><img src="./images/img3.png" alt="Bitcoin">spice</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>11</td>
+            <td><img src="./images/img5.png" alt="Bitcoin">MetaBul</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td><img src="./images/img6.png" alt="Bitcoin">Truth</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>13</td>
+            <td><img src="./images/img8.png" alt="Bitcoin">metaculture</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>14</td>
+            <td><img src="./images/img9.png" alt="Bitcoin">Illuminatism</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <tr>
+            <td>15</td>
+            <td><img src="./images/img11.png" alt="Bitcoin">GoldenRuler</td>
+            <td>4.5%</td>
+            <td>5.3%</td>
+            <td>5.6%</td>
+            <td>$1,000,000,000</td>
+            <td>$50,000</td>
+            <td>18,500,000 BTC</td>
+          </tr>
+
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+
+    <div class="footer-line"></div>
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- <div class="footer-links">
+      <ul>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">About us</a></li>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">Team</a></li>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">FAQ</a></li>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+      </ul>
+    </div> -->
+        <div class="footer-social" id="social">
+
+          <a href="https://twitter.com/anuscoinsol"><i
+              class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://coinmarketcap.com/"><i
+              class="fa-solid fa-globe"></i></a>
+          <a href="https://t.me/UranusCommunity"><i
+              class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <!-- <div class="footer-line"></div> -->
+
+    </footer>
+
+    <div class="footer-bottom">
+
+      <div class="footer-legal">
+        <ul>
+          <li data-aos="fade-up" data-aos-duration="1000">Legal & Privacy</li>
+          <li data-aos="fade-up" data-aos-duration="1000">General Statement</li>
+          <li data-aos="fade-up" data-aos-duration="1000">Legal Advice
+          </li>
+          <div class="box">
+            <li>
+            </li>
+            <li>
+              DEXT Token</li>
+          </div>
+          <li>© DEXTools.io 2024 - 2.80.1 - info@dextools.io | Ads & Marketing:
+            marketing@dextools.io</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </body>
+</html>

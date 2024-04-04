@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Username Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .results {
+        margin-top: 20px;
+    }
+
+    .available {
+        color: green;
+    }
+
+    .taken {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Username Generator</h1>
+    <input type="text" id="usernameInput" placeholder="Enter your desired username">
+    <button id="generateBtn">Generate Alternatives</button>
+    <div class="results" id="results"></div>
+</div>
+
+<script>
+    document.getElementById('generateBtn').addEventListener('click', async function() {
+        const username = document.getElementById('usernameInput').value;
+        const alternatives = generateAlternatives(username);
+        await checkAvailability(alternatives);
+    });
+
+    function generateAlternatives(username) {
+        const alternatives = [];
+        const suffixes = ['Sol', 'Token', 'Coin', 'Finance', 'World'];
+
+        // Generate alternatives by adding suffixes
+        for (const suffix of suffixes) {
+            alternatives.push(`${username}${suffix}`);
+        }
+
+        return alternatives;
+    }
+
+    async function checkAvailability(usernames) {
+        const resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = '';
+
+        const ul = document.createElement('ul');
+        for (const username of usernames) {
+            const li = document.createElement('li');
+            li.textContent = username;
+            const availability = await isUsernameAvailable(username);
+            li.classList.add(availability ? 'available' : 'taken');
+            ul.appendChild(li);
+        }
+
+        resultsContainer.appendChild(ul);
+    }
+
+    // Simulating availability check (replace with actual API call)
+    function isUsernameAvailable(username) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                // Simulating some usernames as unavailable
+                const unavailableUsernames = ['admin', 'user', 'test'];
+                const isAvailable = !unavailableUsernames.includes(username.toLowerCase());
+                resolve(isAvailable);
+            }, 500);
+        });
+    }
+</script>
+</body>
+</html>
