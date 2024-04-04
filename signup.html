@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background-image: linear-gradient(315deg, #1f011e 0%,#011c4a 94%);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        header {
+            background-color: #033757;
+            padding: 18px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav ul li {
+            margin-right: 10px;
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        .nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .nav ul li a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 15px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav ul li a:hover {
+           
+            transform: translateY(-3px);
+        }
+        
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  .nav {
+    flex-basis: auto;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+}
+
+  /* Additional media query for tablets */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav ul li {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+  form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    margin-top: 50px;
+    margin-left: auto; /* Align form to the right */
+    margin-right: auto; /* Align form to the left */
+}
+
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px #138c72;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #138c72;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0b5f49;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #138c72;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .success {
+            background-color: #0b5f49;
+        }
+
+        /* Style for the button */
+.sign-up-btn {
+    background-color: #138c72; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    text-decoration: none; /* Remove default button underline */
+    display: block; /* Make button fill the width of its container */
+    width: 100%; /* Make button fill the width of its container */
+    text-align: center; /* Center align text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Arial, sans-serif; /* Set font family */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Style for button hover state */
+
+
+       /* Style for the button */
+       .log-in-btn {
+    background-color: #138c72; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    text-decoration: none; /* Remove default button underline */
+    display: block; /* Make button fill the width of its container */
+    width: 100%; /* Make button fill the width of its container */
+    text-align: center; /* Center align text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Arial, sans-serif; /* Set font family */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">CoinMarketCap</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="./cryptocurrencies.html">Cryptocurrencies</a></li>
+                <li><a href="./exchange.html">Exchanges</a></li>
+                <li><a href="./community.html">Community</a></li>
+                <li><a href="#aboutus">Learn</a></li>
+                <li>
+                    <a href="./signup.html">
+                        <button class="sign-up-btn">
+                            Sign up
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <button class="log-in-btn">
+                            Log In
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="signup-form">
+        <h2>Sign Up</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" class="sign-up">Sign Up <i class="fas fa-arrow-right" style="margin-left: 5px;"></i></button>
+        <div class="message" id="signup-message">Sign-up successful!</div>
+    </form>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Here you can write JavaScript code to handle the sign-up process, like sending the form data to a server using AJAX
+            // For demonstration purposes, let's just show a success message
+            var messageDiv = document.getElementById('signup-message');
+            messageDiv.classList.add('success'); // Add the 'success' class to apply the styling
+            messageDiv.style.display = 'block'; // Make the message div visible
+            setTimeout(function() {
+                messageDiv.style.display = 'none'; // Hide the message after 3 seconds
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

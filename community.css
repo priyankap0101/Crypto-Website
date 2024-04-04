@@ -1,0 +1,605 @@
+/* Basic styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #fff; /* Text color */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #033757; /* Dark blue header */
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    margin: 0;
+}
+
+.nav {
+    padding: 10px;
+    flex-basis: 100%;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav ul li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nav ul li a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 17px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav ul li a:hover {
+    transform: translateY(-3px);
+}
+
+/* Change the text style */
+.nav ul li a {
+    font-weight: bolder; /* Bold font weight */
+    font-size: 1.2rem; /* Font size */
+    letter-spacing: 1px; /* Letter spacing */
+}
+
+/* Style for the button */
+.sign-up {
+    background-color: #138c72; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    text-decoration: none; /* Remove default button underline */
+    display: block; /* Make button fill the width of its container */
+    width: 100%; /* Make button fill the width of its container */
+    text-align: center; /* Center align text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Arial, sans-serif; /* Set font family */
+    font-size: 16px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+}
+
+/* Style for button hover state */
+.sign-up:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for button active state */
+.sign-up:active {
+    background-color: #004080; /* Even darker blue when button is clicked */
+}
+
+/* Media queries for responsiveness */
+@media only screen and (min-width: 600px) {
+    .nav {
+        flex-basis: auto;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+}
+
+/* Additional media query for tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav ul li {
+        display: inline-block;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Ensure flex items wrap on smaller screens */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff; /* Title color */
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+main, aside {
+    padding: 20px;
+}
+
+main {
+    flex: 1; /* Occupy remaining space */
+}
+
+aside {
+    width: 20%;
+    background-color: #2d2d2d; /* Darker background for sidebar */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* White shadow */
+    margin-right: 20px;
+}
+
+.card {
+    padding: 20px;
+    background-color: #333; /* Dark background for cards */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dark shadow */
+    margin-bottom: 20px;
+    flex-basis: calc(33.33% - 20px); /* Three cards per row with margin */
+    margin-right: 20px; /* Margin between cards */
+}
+
+.card:last-child {
+    margin-right: 0; /* Remove margin for the last card in each row */
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #fff; /* Title color */
+}
+
+.card-content {
+    color: #ddd; /* Content color */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.topics-list, .tokens-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.topics-list li, .tokens-list li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+form {
+    width: 100%;
+    background-color: #2d2d2d; /* Darker background for form */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* White shadow */
+    padding: 20px;
+}
+
+form h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #fff; /* Title color */
+}
+
+.section {
+    background-color: #2d2d2d; /* Darker background for sections */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* White shadow */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #fff; /* Title color */
+}
+
+.thread {
+    margin-top: 4rem;
+    background-color: #2d2d2d; /* Darker background for threads */
+    border: 1px solid #666; /* Dark border */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* White shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Style for pre-posted threads */
+.thread {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.thread h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.thread p {
+    margin-bottom: 10px;
+}
+
+/* Style for author info */
+.author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.author-info i {
+    margin-right: 5px;
+}
+
+/* Style for buttons */
+.edit-thread-btn,
+.delete-thread-btn {
+    background-color: #138c72; /* Green background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.edit-thread-btn:hover,
+.delete-thread-btn:hover {
+    background-color: #0056b3; /* Darker green on hover */
+}
+
+
+.thread:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* White shadow on hover */
+}
+
+.thread h3 {
+    margin-top: 0;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff; /* Thread title color */
+}
+
+.thread p {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.comment {
+    border-bottom: 1px solid #666; /* Dark border */
+    padding: 10px 0;
+    font-size: 1.3rem;
+}
+
+form {
+    margin: 0 auto; /* Align form center */
+    width: 80%; /* Reduce form width */
+    max-width: 600px; /* Limit form width */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #666; /* Dark border */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    color: #fff; /* Text color */
+    background-color: #333; /* Dark background for inputs */
+}
+
+button {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.token {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.token img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.token p {
+    margin: 0;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    color: #fff; /* Title color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow effect */
+}
+
+.forecast-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.forecast-list li {
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background color for forecast items */
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.forecast-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Darker background color on hover */
+}
+
+.forecast-title {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #fff; /* Text color */
+}
+
+.forecast-time {
+    margin-right: 10px;
+    color: #fff; /* Text color */
+}
+
+.set-reminder-btn {
+    background-color: #45a049; /* Green button */
+    color: #fff;
+    border: 2px solid #45a049; /* Add border */
+    padding: 10px 20px; /* Increase padding */
+    cursor: pointer;
+    border-radius: 25px; /* Increase border-radius for rounded shape */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transitions for smoother hover effect */
+    font-size: 1rem;
+    display: inline-block; /* Change display to inline-block */
+    margin-top: 10px; /* Add margin to the top */
+}
+
+.set-reminder-btn:hover {
+    background-color: #357d37; /* Darker green on hover */
+    border-color: #357d37; /* Change border color on hover */
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.account img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff; /* Account name color */
+    font-weight: bolder;
+}
+
+.account-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #666; /* Info text color */
+}
+
+.follow-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.follow-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    aside {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    main {
+        width: 100%; /* Occupy full width on smaller screens */
+    }
+
+    .card {
+        flex-basis: 100%; /* Each card occupies full width on smaller screens */
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 20px; /* Add margin at the bottom of each card */
+    }
+}
+
+.footer {
+    background-color: #000918;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-links ul li a {
+    color: #a19797; /* Change to the color you want */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer-links ul li a:hover {
+    color: #f98d12; /* Change to the hover color you want */
+  }
+  
+  .footer-social a {
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    display: conte;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-bottom .dropdown {
+    margin-left: 20px;
+  }
+  
+  .footer-social a i {
+    color: #ffffff; /* Default color */
+    font-size: 34px; /* Set the font size of the icons */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    margin: 1rem;
+  }
+  
+  .footer-social a:hover i {
+    /* Change to your desired color on hover */
+    transform: scale(1.2); /* Scale the icon to 120% on hover */
+  }
+  .footer-nav ul {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-nav li {
+    margin-right: 20px; /* Add spacing between list items */
+  }
+  
+  .footer-nav li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  .footer-nav {
+    text-align: center; /* Center-align the content */
+  }
+  
+  .footer-nav ul {
+    display: inline-block; /* Display the list items inline */
+    padding: 0;
+  }
+  
+  .footer-nav li {
+    display: inline; /* Display the list items inline */
+    margin: 0 10px; /* Add some margin between the list items */
+  }
+  
+  .footer-nav select {
+    margin: 0 10px; /* Add margin to the dropdown */
+  }
+  
+  .dropdown {
+    display: inline-block; /* Display the dropdown inline */
+    vertical-align: middle; /* Align the dropdown vertically */
+  }
+  .footer-nav a {
+    color: grey; /* Change the color to red */
+    text-decoration: none; /* Remove underline */
+  }
+  .dropdown select {
+    border: 1px solid #ccc; /* Add gray border */
+    padding: 5px; /* Add padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Add border radius */
+    background-color: #fff; /* Set background color */
+  }
+  
+  .dropdown select:hover {
+    border-color: #999; /* Change border color on hover */
+  }
+  
+  /* footer legal */
+  .footer-legal {
+    text-align: center;
+    /* margin-left: 30rem; */
+    margin-top: 2rem;
+    color: gray;
+    height: 6rem;
+  }
+  .footer-legal ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .footer-legal li {
+    display: inline-block; /* Display items in the same line */
+    margin-right: 10px; /* Add space between items */
+  }
+  
+  .footer-legal li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .footer-legal li:nth-child(4),
+  .footer-legal li:nth-child(5) {
+    display: block; /* Display spans in a new line */
+  }
+  

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum</title>
+    <link rel="stylesheet" href="./community.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header data-aos="fade-in" data-aos-duration="1000">
+        <h1 class="logo">CoinMarketCap</h1>
+        <nav class="nav" data-aos="fade-in" data-aos-duration="1000">
+          <ul>
+            <li><a href="./cryptocurrencies.html">Cryptocurrencies</a></li>
+            <li><a href="./exchange.html">Exchanges</a></li>
+            <li><a href="./community.html">Community</a></li>
+            <li><a href="#aboutus">Learn</a></li>
+            <li>
+                <a href="./signup.html"> <!-- Replace "signup.html" with the URL of your sign-up page -->
+                    <button class="sign-up">
+                        Sign up
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="login.html"> <!-- Replace "login.html" with the URL of your login page -->
+                    <button class="sign-up">
+                        Log In
+                    </button>
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+        <!-- <h1>Community Forum</h1> -->
+   
+
+    <div class="container">
+        <aside>
+            <div class="card">
+                <h2>Trending Tokens</h2>
+                <div class="token">
+                    <img src="./images/img10.png" alt="Token 1">
+                    <div class="token-info">
+                        <h3>Token 1</h3>
+                        <p>Symbol: ABC</p>
+                        <p>Price: $100</p>
+                        <p>Change: +5%</p>
+                    </div>
+                </div>
+                <div class="token">
+                    <img src="./images/img2.png" alt="Token 2">
+                    <div class="token-info">
+                        <h3>Token 2</h3>
+                        <p>Symbol: XYZ</p>
+                        <p>Price: $200</p>
+                        <p>Change: -2%</p>
+                    </div>
+                </div>
+                <!-- Add more tokens as needed -->
+            </div>
+            <div class="card">
+                <h2>Recommended Accounts</h2>
+                <div class="account">
+                    <img src="./images/prof1.png" alt="Account 1">
+                    <div class="account-info">
+                        <h3>Jhon</h3>
+                       
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="account">
+                    <img src="./images/prof2.webp" alt="Account 2">
+                    <div class="account-info">
+                        <h3>David</h3>
+                        
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <!-- Add more accounts as needed -->
+            </div>
+            
+        </aside>
+        <main>
+            <section id="section1" class="section">
+                <h2><i class="fas fa-edit"></i> </h2>
+                <div id="thread-list"></div>
+                <form id="new-thread-form">
+                    <input type="text" id="thread-title" placeholder="Thread Title" required>
+                    <textarea id="thread-content" placeholder="Thread Content" required></textarea>
+                    <button type="submit"><i class="fas fa-plus"></i> Create Thread</button>
+                </form>
+            </section>
+            <!-- Other sections can be added similarly -->
+
+            <section class="section">
+                <div class="thread">
+                    <h3>Bitcoin Price Analysis</h3>
+                    <p>Bitcoin's price has surged to $60,000, breaking previous records...</p>
+                    <div class="author-info">
+                        <i class="fas fa-user"></i>
+                        <span>CryptoExpert123</span>
+                    </div>
+                    <button class="delete-thread-btn">Follow</button>
+                </div>
+            
+                <div class="thread">
+                    <h3>Ethereum Upgrade Discussion</h3>
+                    <p>Let's discuss the upcoming Ethereum upgrade and its potential impact on the market...</p>
+                    <div class="author-info">
+                        <i class="fas fa-user"></i>
+                        <span>CryptoEnthusiast456</span>
+                    </div>
+                    
+                    <button class="delete-thread-btn">Follow</button>
+                </div>
+            
+                <!-- Add more pre-posted threads as needed -->
+            </section>
+            
+        </main>
+        
+        <aside>
+            <div class="card">
+                <h2>🔥 Trending Topics</h2>
+                <ul class="topics-list">
+                    <li>#Launchpool</li>
+                    <li>#Coinbase</li>
+                    <li>#SilkRoad</li>
+                    <li>#BlackRock</li>
+                    <li>#Airdrop</li>
+                </ul>
+            </div>
+            <div class="card" style="background-color: #4e6bff;">
+                <h2>Crypto Live Forecast</h2>
+                <ul class="forecast-list">
+                    <li>
+                        <span class="forecast-title">Bitcoin (BTC)</span> <br>
+                        <span class="forecast-time">April 10, 2024, 3:00 PM</span> <br>
+                        <button class="set-reminder-btn">Set Reminder</button>
+                    </li>
+                    <li>
+                        <span class="forecast-title">Ethereum (ETH)</span> <br>
+                        <span class="forecast-time">April 12, 2024, 2:30 PM</span><br>
+                        <button class="set-reminder-btn">Set Reminder</button>
+                    </li>
+                    <!-- Add more forecast items as needed -->
+                </ul>
+            </div>
+            
+        </aside>
+    </div>
+
+    <div class="footer-line"></div>
+    <footer class="footer">
+      <div class="footer-content">
+     
+        <div class="footer-social" id="social">
+
+          <a href="https://twitter.com/anuscoinsol"><i
+              class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://coinmarketcap.com/"><i
+              class="fa-solid fa-globe"></i></a>
+          <a href="https://t.me/UranusCommunity"><i
+              class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <!-- <div class="footer-line"></div> -->
+
+    </footer>
+
+    <div class="footer-bottom">
+
+      <div class="footer-legal">
+        <ul>
+          <li data-aos="fade-up" data-aos-duration="1000">Legal & Privacy</li>
+          <li data-aos="fade-up" data-aos-duration="1000">General Statement</li>
+          <li data-aos="fade-up" data-aos-duration="1000">Legal Advice
+          </li>
+          <div class="box">
+            <li>
+            </li>
+            <li>
+              DEXT Token</li>
+          </div>
+          <li>© DEXTools.io 2024 - 2.80.1 - info@dextools.io | Ads & Marketing:
+            marketing@dextools.io</li>
+        </ul>
+      </div>
+
+    </div>
+   
+    <script src="./community.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>
+</html>

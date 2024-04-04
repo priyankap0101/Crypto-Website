@@ -1,18 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liquidity Table</title>
-<style>
-    body {
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquidity Table</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+  /* General styling for body */
+body {
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-image: linear-gradient(315deg, #1f011e 0%,#011c4a 94%);
 }
-  h1,
+
+/* Styling for header */
+header {
+  background-color: #033757; /* Change to blue color */
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  margin: 0;
+}
+
+.nav {
+  padding: 10px;
+  flex-basis: 100%;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav ul li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.nav ul li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 17px;
+  border-radius: 15px;
+  
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.nav ul li a:hover {
+  transform: translateY(-3px); /* Move element up on hover */
+  /* box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);  */
+}
+
+/* Change the text style */
+.nav ul li a {
+  font-weight: bolder; /* Bold font weight */
+  font-size: 1.2rem; /* Font size */
+  letter-spacing: 1px; /* Letter spacing */
+}
+ /* Style for the button */
+ .sign-up {
+  
+  background-color: #138c72; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  text-decoration: none; /* Remove default button underline */
+  display: block; /* Make button fill the width of its container */
+  width: 100%; /* Make button fill the width of its container */
+  text-align: center; /* Center align text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-family: Arial, sans-serif; /* Set font family */
+      font-size: 16px; /* Set font size */
+      font-weight: bold; /* Set font weight */
+     
+}
+
+/* Style for button hover state */
+.sign-up:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for button active state */
+.sign-up:active {
+  background-color: #004080; /* Even darker blue when button is clicked */
+}
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  .nav {
+    flex-basis: auto;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+}
+
+  /* Additional media query for tablets */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav ul li {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+
+/* Media Query for small devices */
+h1,
 p {
     margin-top: 2rem;
     margin-left: 5rem;
@@ -53,8 +173,14 @@ tbody tr:hover {
     background-color: rgb(5, 63, 92); /* Change background color on hover */
 }
 
-  .high-liquidity {
-    color: green;
+img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px; /* Add space between image and text */
+    vertical-align: middle; /* Align images vertically */
+}
+.high-liquidity {
+    color: rgb(53, 250, 53);
   }
   .medium-liquidity {
     color: orange;
@@ -62,8 +188,8 @@ tbody tr:hover {
   .low-liquidity {
     color: red;
   }
-
-  @media only screen and (max-width: 768px) {
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
     table {
         width: 100%;
         margin-left: 0;
@@ -74,139 +200,389 @@ tbody tr:hover {
         font-size: 1rem; /* Decrease font size for smaller screens */
     }
 }
+
+/* Media Query for screens with width 400px */
+@media only screen and (max-width: 400px) {
+    /* Adjust styles for 400px width */
+    header {
+        padding: 10px; /* Reduce padding */
+    }
+    .nav ul li a {
+        padding: 10px; /* Reduce padding */
+        font-size: 1rem; /* Decrease font size */
+    }
+}
+
+/* Media Query for screens with width 600px */
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    /* Adjust styles for 600px width */
+    header {
+        padding: 15px; /* Adjust padding */
+    }
+    .nav ul li a {
+        padding: 15px; /* Adjust padding */
+        font-size: 1.1rem; /* Adjust font size */
+    }
+}
+.footer {
+    /* background-color: #414141; */
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .footer-links ul li a {
+    color: #a19797; /* Change to the color you want */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer-links ul li a:hover {
+    color: #f98d12; /* Change to the hover color you want */
+  }
+  
+  .footer-social a {
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    display: conte;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-bottom .dropdown {
+    margin-left: 20px;
+  }
+  
+  .footer-social a i {
+    color: #ffffff; /* Default color */
+    font-size: 34px; /* Set the font size of the icons */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    margin: 1rem;
+  }
+  
+  .footer-social a:hover i {
+    /* Change to your desired color on hover */
+    transform: scale(1.2); /* Scale the icon to 120% on hover */
+  }
+  .footer-nav ul {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-nav li {
+    margin-right: 20px; /* Add spacing between list items */
+  }
+  
+  .footer-nav li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  .footer-nav {
+    text-align: center; /* Center-align the content */
+  }
+  
+  .footer-nav ul {
+    display: inline-block; /* Display the list items inline */
+    padding: 0;
+  }
+  
+  .footer-nav li {
+    display: inline; /* Display the list items inline */
+    margin: 0 10px; /* Add some margin between the list items */
+  }
+  
+  .footer-nav select {
+    margin: 0 10px; /* Add margin to the dropdown */
+  }
+  
+  .dropdown {
+    display: inline-block; /* Display the dropdown inline */
+    vertical-align: middle; /* Align the dropdown vertically */
+  }
+  .footer-nav a {
+    color: grey; /* Change the color to red */
+    text-decoration: none; /* Remove underline */
+  }
+  .dropdown select {
+    border: 1px solid #ccc; /* Add gray border */
+    padding: 5px; /* Add padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Add border radius */
+    background-color: #fff; /* Set background color */
+  }
+  
+  .dropdown select:hover {
+    border-color: #999; /* Change border color on hover */
+  }
+  
+  /* footer legal */
+  .footer-legal {
+    text-align: center;
+    /* margin-left: 30rem; */
+    margin-top: 2rem;
+    color: gray;
+    height: 6rem;
+  }
+  .footer-legal ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .footer-legal li {
+    display: inline-block; /* Display items in the same line */
+    margin-right: 10px; /* Add space between items */
+  }
+  
+  .footer-legal li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  .footer-legal li:nth-child(4),
+  .footer-legal li:nth-child(5) {
+    display: block; /* Display spans in a new line */
+  }
+  
+    
 </style>
-</head>
-<body>
+  </head>
+  <body>
+    <header data-aos="fade-in" data-aos-duration="1000">
+      <h1 class="logo">CoinMarketCap</h1>
+      <nav class="nav" data-aos="fade-in" data-aos-duration="1000">
+        <ul>
+          <li><a href="./cryptocurrencies.html">Cryptocurrencies</a></li>
+          <li><a href="#">Exchanges</a></li>
+          <li><a href="./community.html">Community</a></li>
+          <li><a href="#aboutus">Learn</a></li>
+          <li>
+            <a href>
+              <button class="sign-up">
+                Sign up
+              </button>
+            </a>
+          </li>
 
-<h2>Liquidity Table</h2>
+          <li>
+            <a href>
+              <button class="sign-up">
+                Log In
+              </button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Sr. No.</th>
-      <th>Exchange</th>
-      <th>Score</th>
-      <th>Trading Volume (24h)</th>
-      <th>Avg. Liquidity</th>
-      <th>Weekly Visits</th>
-      <th># Markets</th>
-      <th># Coins</th>
-      <th>Fiat Supported</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Binance</td>
-      <td>9.5</td>
-      <td>$5,000,000,000+</td>
-      <td class="high-liquidity">High</td>
-      <td>10,000,000+</td>
-      <td>500+</td>
-      <td>200+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Coinbase Pro</td>
-      <td>9.0</td>
-      <td>$2,500,000,000+</td>
-      <td class="high-liquidity">High</td>
-      <td>7,000,000+</td>
-      <td>300+</td>
-      <td>100+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Kraken</td>
-      <td>8.8</td>
-      <td>$1,800,000,000+</td>
-      <td class="high-liquidity">High</td>
-      <td>5,000,000+</td>
-      <td>200+</td>
-      <td>80+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Bitfinex</td>
-      <td>8.5</td>
-      <td>$1,500,000,000+</td>
-      <td class="high-liquidity">High</td>
-      <td>4,000,000+</td>
-      <td>150+</td>
-      <td>60+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Bittrex</td>
-      <td>8.2</td>
-      <td>$1,200,000,000+</td>
-      <td class="medium-liquidity">Medium</td>
-      <td>3,500,000+</td>
-      <td>120+</td>
-      <td>50+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>Huobi Global</td>
-      <td>8.0</td>
-      <td>$1,000,000,000+</td>
-      <td class="medium-liquidity">Medium</td>
-      <td>3,000,000+</td>
-      <td>100+</td>
-      <td>40+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>OKEx</td>
-      <td>7.8</td>
-      <td>$900,000,000+</td>
-      <td class="medium-liquidity">Medium</td>
-      <td>2,500,000+</td>
-      <td>80+</td>
-      <td>30+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>KuCoin</td>
-      <td>7.5</td>
-      <td>$700,000,000+</td>
-      <td class="medium-liquidity">Medium</td>
-      <td>2,000,000+</td>
-      <td>70+</td>
-      <td>25+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Gate.io</td>
-      <td>7.2</td>
-      <td>$500,000,000+</td>
-      <td class="low-liquidity">Low</td>
-      <td>1,500,000+</td>
-      <td>50+</td>
-      <td>20+</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>Bitstamp</td>
-      <td>7.0</td>
-      <td>$400,000,000+</td>
-      <td class="low-liquidity">Low</td>
-      <td>1,000,000+</td>
-      <td>40+</td>
-      <td>15+</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+    <section class="crypto-section parallax-section">
+      <h1>Top Cryptocurrency Spot Exchanges</h1>
+      <p>CoinMarketCap ranks and scores exchanges based on traffic, liquidity, trading volumes, and confidence in the legitimacy of trading volumes reported. </p>
 
-</body>
+      <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Exchange</th>
+                <th>Score</th>
+                <th>Trading Volume (24h)</th>
+                <th>Avg. Liquidity</th>
+                <th>Weekly Visits</th>
+                <th># Markets</th>
+                <th># Coins</th>
+                <th>Fiat Supported</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Binance</td>
+                <td>9.5</td>
+                <td>$5,000,000,000+</td>
+                <td class="high-liquidity">High</td>
+                <td>10,000,000+</td>
+                <td>500+</td>
+                <td>200+</td>
+                <td>Yes</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Coinbase Pro</td>
+                <td>9.0</td>
+                <td>$2,500,000,000+</td>
+                <td class="high-liquidity">High</td>
+                <td>7,000,000+</td>
+                <td>300+</td>
+                <td>100+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Kraken</td>
+                <td>8.8</td>
+                <td>$1,800,000,000+</td>
+                <td class="high-liquidity">High</td>
+                <td>5,000,000+</td>
+                <td>200+</td>
+                <td>80+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Bitfinex</td>
+                <td>8.5</td>
+                <td>$1,500,000,000+</td>
+                <td class="high-liquidity">High</td>
+                <td>4,000,000+</td>
+                <td>150+</td>
+                <td>60+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Bittrex</td>
+                <td>8.2</td>
+                <td>$1,200,000,000+</td>
+                <td class="medium-liquidity">Medium</td>
+                <td>3,500,000+</td>
+                <td>120+</td>
+                <td>50+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Huobi Global</td>
+                <td>8.0</td>
+                <td>$1,000,000,000+</td>
+                <td class="medium-liquidity">Medium</td>
+                <td>3,000,000+</td>
+                <td>100+</td>
+                <td>40+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>OKEx</td>
+                <td>7.8</td>
+                <td>$900,000,000+</td>
+                <td class="medium-liquidity">Medium</td>
+                <td>2,500,000+</td>
+                <td>80+</td>
+                <td>30+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>KuCoin</td>
+                <td>7.5</td>
+                <td>$700,000,000+</td>
+                <td class="medium-liquidity">Medium</td>
+                <td>2,000,000+</td>
+                <td>70+</td>
+                <td>25+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Gate.io</td>
+                <td>7.2</td>
+                <td>$500,000,000+</td>
+                <td class="low-liquidity">Low</td>
+                <td>1,500,000+</td>
+                <td>50+</td>
+                <td>20+</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Bitstamp</td>
+                <td>7.0</td>
+                <td>$400,000,000+</td>
+                <td class="low-liquidity">Low</td>
+                <td>1,000,000+</td>
+                <td>40+</td>
+                <td>15+</td>
+                <td>Yes</td>
+              </tr>
+
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+
+    <div class="footer-line"></div>
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- <div class="footer-links">
+      <ul>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">About us</a></li>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">Team</a></li>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">FAQ</a></li>
+        <li><a href="#" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+      </ul>
+    </div> -->
+        <div class="footer-social" id="social">
+
+          <a href="https://twitter.com/anuscoinsol"><i
+              class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://coinmarketcap.com/"><i
+              class="fa-solid fa-globe"></i></a>
+          <a href="https://t.me/UranusCommunity"><i
+              class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <!-- <div class="footer-line"></div> -->
+
+    </footer>
+
+    <div class="footer-bottom">
+
+      <div class="footer-legal">
+        <ul>
+          <li data-aos="fade-up" data-aos-duration="1000">Legal & Privacy</li>
+          <li data-aos="fade-up" data-aos-duration="1000">General Statement</li>
+          <li data-aos="fade-up" data-aos-duration="1000">Legal Advice
+          </li>
+          <div class="box">
+            <li>
+            </li>
+            <li>
+              DEXT Token</li>
+          </div>
+          <li>© DEXTools.io 2024 - 2.80.1 - info@dextools.io | Ads & Marketing:
+            marketing@dextools.io</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+  </body>
 </html>
