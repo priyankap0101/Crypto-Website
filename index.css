@@ -132,10 +132,11 @@ header {
 }
 
 .typewriter {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   overflow: hidden;
-  margin-left: 23rem;
-  padding: 20px;
+  margin-top: -3rem;
+  margin-left: 6rem;
+  /* padding: 20px; */
   text-align: left;
   white-space: pre-line; /* Preserve line breaks */
 }
@@ -209,7 +210,7 @@ h3 {
 
 @media only screen and (max-width: 600px) {
   .content {
-    padding: 0px;
+    /* padding: 0px; */
     height: 46vh;
   }
   .typewriter {
@@ -225,7 +226,7 @@ h3 {
 
 /* General styles for the section */
 .section {
-  height: 100vh;
+  height: 237vh;
   position: relative;
   overflow: hidden;
   /* background-color: #000; Black background */
@@ -372,13 +373,14 @@ h3 {
 @media only screen and (max-width: 600px) {
   .button-container {
     flex-direction: column;
+    align-items: center;
   }
 }
 /* Media Section */
 /* Default styles for .media-section */
 .media-section {
   padding: 20px;
-  height: 100vh;
+  height: 204vh;
 }
 
 /* Grid container styles for .media-grid */
@@ -468,12 +470,12 @@ h3 {
     height: 220px; /* Adjusted height for devices up to 400px */
   }
   .media-section {
-    height:172vh;
+    height:max-content;
   }
 }
 
 .uranus-section {
-  height: 100vh;
+  height: 130vh;
   padding: 20px;
   background-color: #f0f0f0; /* Adjust background color as needed */
 }
@@ -487,7 +489,7 @@ h3 {
 
 .video-container-uranus video {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
@@ -526,7 +528,7 @@ h3 {
 
 .video-container-uranus video {
   position: absolute;
-  /* top: 50%; */
+  
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
@@ -556,6 +558,15 @@ h3 {
     width: 90%; /* Adjusted width for devices up to 600px */
     height: 90%; /* Adjusted height for devices up to 600px */
   }
+  .form-container {
+    
+    width: max-content;
+    /* max-width: 638px; */
+    /* margin: 0 auto; */
+    padding: 0 -56px;
+    margin-left: -6rem;
+    /* margin: -77px; */
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -575,8 +586,9 @@ h3 {
 
 /* contact */
 .contact-section {
-  padding: 50px 0;
+  padding: 1px;
   background-color: #f9f9f9;
+  height: 150vh;
 }
 
 .form-container {
