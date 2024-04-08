@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Learning Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #283E4A;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+  background-color: #033757; /* Change to blue color */
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  margin: 0;
+}
+
+.nav {
+  padding: 10px;
+  flex-basis: 100%;
+}
+
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav ul li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.nav ul li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 17px;
+  border-radius: 15px;
+  /*Addborderradiusformodernlook*/
+  /* background: linear-gradient(135deg, #54a0eb, #0056b3); */
+  /*Gradientbackground*/
+  /* box-shadow: 0 4px 6px rgba(174, 200, 227, 0.1); */
+  /*Boxshadowfordepth*/
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.nav ul li a:hover {
+  transform: translateY(-3px); /* Move element up on hover */
+  /* box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);  */
+}
+
+/* Change the text style */
+.nav ul li a {
+  font-weight: bolder; /* Bold font weight */
+  font-size: 1.2rem; /* Font size */
+  letter-spacing: 1px; /* Letter spacing */
+}
+ /* Style for the button */
+ .sign-up {
+  
+  background-color: #138c72; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  text-decoration: none; /* Remove default button underline */
+  display: block; /* Make button fill the width of its container */
+  width: 100%; /* Make button fill the width of its container */
+  text-align: center; /* Center align text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-family: Arial, sans-serif; /* Set font family */
+      font-size: 16px; /* Set font size */
+      font-weight: bold; /* Set font weight */
+     
+}
+
+/* Style for button hover state */
+.sign-up:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for button active state */
+.sign-up:active {
+  background-color: #004080; /* Even darker blue when button is clicked */
+}
+  /* Media queries for responsiveness */
+@media only screen and (min-width: 600px) {
+  .nav {
+    flex-basis: auto;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+}
+  /* Additional media query for tablets */
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav ul li {
+      display: inline-block;
+      margin-right: 15px;
+      margin-bottom: 0;
+    }
+  }
+      .container {
+            max-width: 1200px;
+            margin: auto; /* Center the container */
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Center the items horizontally */
+            align-items: flex-start; /* Align the items to the start vertically */
+            flex-wrap: wrap;
+        }
+
+        .module {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: calc(50% - 20px);
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            transition: transform 0.3s ease;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-icon {
+            font-size: 2em;
+            margin-bottom: 10px; 
+            color: #333;
+        }
+
+        .module h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .module p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #283E4A;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .quiz-btn {
+            background-color: #5f9ea0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: auto;
+        }
+
+        .quiz-btn:hover {
+            background-color: #4682B4;
+        }
+
+        .quiz {
+            display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; 
+            margin-top: 20px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left; 
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        .option input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .submit-answer {
+            background-color: #5f9ea0;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-answer:hover {
+            background-color: #4682B4;
+        }
+
+        .restart-quiz {
+            background-color: #5f9ea0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .restart-quiz:hover {
+            background-color: #4682B4;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .quiz-heading {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .quiz p {
+            line-height: 1.5;
+        }
+        
+.footer {
+  background-color: #000918;
+  color: #fff;
+  padding: 20px 0;
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  color: #a19797; /* Change to the color you want */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-links ul li a:hover {
+  color: #f98d12; /* Change to the hover color you want */
+}
+
+.footer-social a {
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: conte;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-bottom .dropdown {
+  margin-left: 20px;
+}
+
+.footer-social a i {
+  color: #ffffff; /* Default color */
+  font-size: 34px; /* Set the font size of the icons */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  margin: 1rem;
+}
+
+.footer-social a:hover i {
+  /* Change to your desired color on hover */
+  transform: scale(1.2); /* Scale the icon to 120% on hover */
+}
+.footer-nav ul {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-right: 20px; /* Add spacing between list items */
+}
+
+.footer-nav li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+.footer-nav {
+  text-align: center; /* Center-align the content */
+}
+
+.footer-nav ul {
+  display: inline-block; /* Display the list items inline */
+  padding: 0;
+}
+
+.footer-nav li {
+  display: inline; /* Display the list items inline */
+  margin: 0 10px; /* Add some margin between the list items */
+}
+
+.footer-nav select {
+  margin: 0 10px; /* Add margin to the dropdown */
+}
+
+.dropdown {
+  display: inline-block; /* Display the dropdown inline */
+  vertical-align: middle; /* Align the dropdown vertically */
+}
+.footer-nav a {
+  color: grey; /* Change the color to red */
+  text-decoration: none; /* Remove underline */
+}
+.dropdown select {
+  border: 1px solid #ccc; /* Add gray border */
+  padding: 5px; /* Add padding */
+  font-size: 16px; /* Adjust font size */
+  border-radius: 5px; /* Add border radius */
+  background-color: #fff; /* Set background color */
+}
+
+.dropdown select:hover {
+  border-color: #999; /* Change border color on hover */
+}
+
+/* footer legal */
+.footer-legal {
+  text-align: center;
+  /* margin-left: 30rem; */
+  margin-top: 2rem;
+  color: gray;
+  height: 6rem;
+}
+.footer-legal ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.footer-legal li {
+  display: inline-block; /* Display items in the same line */
+  margin-right: 10px; /* Add space between items */
+}
+
+.footer-legal li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.footer-legal li:nth-child(4),
+.footer-legal li:nth-child(5) {
+  display: block; /* Display spans in a new line */
+}
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <h1>Cryptocurrency Learning Platform</h1>
+    </header> -->
+
+    <header data-aos="fade-in" data-aos-duration="1000">
+        <h1 class="logo">CoinMarketCap</h1>
+        <nav class="nav" data-aos="fade-in" data-aos-duration="1000">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./cryptocurrencies.html">Cryptocurrencies</a></li>
+            <li><a href="./exchange.html">Exchanges</a></li>
+            <li><a href="./community.html">Community</a></li>
+            <li><a href="./learn.html">Learn</a></li>
+            <li>
+              <a href="./signup.html">
+                <button class="sign-up">
+                  Sign up
+                </button>
+              </a>
+            </li>
+  
+            <li>
+              <a href="./login.html">
+                <button class="sign-up">
+                  Log In
+                </button>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- <h1>Cryptocurrency Learning Platform</h1> -->
+    <div class="container">
+        
+        <!-- Educational modules about cryptocurrencies -->
+        <div class="module">
+            
+            <!-- <i class="fas fa-bitcoin module-icon"></i> -->
+            <div class="module-content">
+                <h2>Bitcoin</h2>
+                <p>Bitcoin is a decentralized digital currency without a central bank or single administrator that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries. Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain.</p>
+            </div>
+            <button class="quiz-btn">Take Quiz</button>
+            <div class="quiz">
+                <h3 class="quiz-heading">Bitcoin Quiz</h3>
+                <p>What is Bitcoin's unique feature that allows transactions to be conducted without the need for intermediaries?</p>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="bitcoin" value="Peer-to-peer network"> Peer-to-peer network</li>
+                    <li class="option"><input type="radio" name="bitcoin" value="Centralized control"> Centralized control</li>
+                    <li class="option"><input type="radio" name="bitcoin" value="Interbank settlement"> Interbank settlement</li>
+                    <li class="option"><input type="radio" name="bitcoin" value="Government regulation"> Government regulation</li>
+                </ul>
+                <button class="submit-answer">Submit</button>
+                <p class="result"></p>
+                <button class="restart-quiz">Restart Quiz</button>
+            </div>
+        </div>
+
+        <div class="module">
+            <!-- <i class="fab fa-ethereum module-icon"></i> -->
+            <div class="module-content">
+                <h2>Ethereum</h2>
+                <p>Ethereum is a decentralized platform that runs smart contracts: applications that run exactly as programmed without any possibility of downtime, censorship, fraud, or third-party interference. These apps run on a custom-built blockchain, an enormously powerful shared global infrastructure that can move value around and represent the ownership of property.</p>
+            </div>
+            <button class="quiz-btn">Take Quiz</button>
+            <div class="quiz">
+                <h3 class="quiz-heading">Ethereum Quiz</h3>
+                <p>What distinguishes Ethereum from traditional platforms in terms of application execution?</p>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="ethereum" value="Centralized control"> Centralized control</li>
+                    <li class="option"><input type="radio" name="ethereum" value="Decentralized platform"> Decentralized platform</li>
+                    <li class="option"><input type="radio" name="ethereum" value="Third-party interference"> Third-party interference</li>
+                    <li class="option"><input type="radio" name="ethereum" value="Censorship resistance"> Censorship resistance</li>
+                </ul>
+                <button class="submit-answer">Submit</button>
+                <p class="result"></p>
+                <button class="restart-quiz">Restart Quiz</button>
+            </div>
+        </div>
+
+        <div class="module">
+            <!-- <i class="fab fa-litecoin module-icon"></i> -->
+            <div class="module-content">
+                <h2>Litecoin</h2>
+                <p>Litecoin is a peer-to-peer cryptocurrency created by Charlie Lee. It was created based on the Bitcoin protocol but differs in terms of the hashing algorithm used.</p>
+            </div>
+            <button class="quiz-btn">Take Quiz</button>
+            <div class="quiz">
+                <h3 class="quiz-heading">Litecoin Quiz</h3>
+                <p>How does Litecoin differ from Bitcoin in terms of the hashing algorithm used?</p>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="litecoin" value="Same hashing algorithm"> Same hashing algorithm</li>
+                    <li class="option"><input type="radio" name="litecoin" value="Different hashing algorithm"> Different hashing algorithm</li>
+                    <li class="option"><input type="radio" name="litecoin" value="Litecoin uses SHA-256"> Litecoin uses SHA-256</li>
+                    <li class="option"><input type="radio" name="litecoin" value="Bitcoin uses Scrypt"> Bitcoin uses Scrypt</li>
+                </ul>
+                <button class="submit-answer">Submit</button>
+                <p class="result"></p>
+                <button class="restart-quiz">Restart Quiz</button>
+            </div>
+        </div>
+
+        <div class="module">
+            <!-- <i class="fab fa-ripple module-icon"></i> -->
+            <div class="module-content">
+                <h2>Ripple</h2>
+                <p>Ripple is a real-time gross settlement system, currency exchange, and remittance network created by Ripple Labs Inc., a US-based technology company. It was released in 2012.</p>
+            </div>
+            <button class="quiz-btn">Take Quiz</button>
+            <div class="quiz">
+                <h3 class="quiz-heading">Ripple Quiz</h3>
+                <p>What role does Ripple play in the financial system?</p>
+                <ul class="options">
+                    <li class="option"><input type="radio" name="ripple" value="Decentralized platform"> Decentralized platform</li>
+                    <li class="option"><input type="radio" name="ripple" value="Real-time gross settlement system"> Real-time gross settlement system</li>
+                    <li class="option"><input type="radio" name="ripple" value="Peer-to-peer network"> Peer-to-peer network</li>
+                    <li class="option"><input type="radio" name="ripple" value="Proof-of-work consensus algorithm"> Proof-of-work consensus algorithm</li>
+                </ul>
+                <button class="submit-answer">Submit</button>
+                <p class="result"></p>
+                <button class="restart-quiz">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer ">
+        <div class="footer-content">
+          <!-- <div class="footer-links">
+            <ul>
+              <li><a href="#" data-aos="fade-up" data-aos-duration="1000">About us</a></li>
+              <li><a href="#" data-aos="fade-up" data-aos-duration="1000">Team</a></li>
+              <li><a href="#" data-aos="fade-up" data-aos-duration="1000">FAQ</a></li>
+              <li><a href="#" data-aos="fade-up" data-aos-duration="1000">Contact</a></li>
+            </ul>
+          </div> -->
+          <div class="footer-social" id="social">
+            
+            <a href="https://twitter.com/anuscoinsol"><i class="fa-brands fa-x-twitter" ></i></a>
+            <a href="https://coinmarketcap.com/"><i class="fa-solid fa-globe" ></i></a>
+            <a href="https://t.me/UranusCommunity"><i class="fa-brands fa-telegram" ></i></a>
+          </div>
+        </div>
+        <!-- <div class="footer-line"></div> -->
+        
+      </footer>
+        
+      <div class="footer-bottom">
+          
+        <div class="footer-legal">
+          <ul>
+            <li data-aos="fade-up" data-aos-duration="1000">Legal & Privacy</li>
+            <li data-aos="fade-up" data-aos-duration="1000">General Statement</li>
+            <li data-aos="fade-up" data-aos-duration="1000">Legal Advice
+          </li>
+            <div class="box">
+              <li >
+              </li>
+              <li >
+                  DEXT Token</li>
+            </div>
+            <li >© DEXTools.io 2024 - 2.80.1 - info@dextools.io | Ads & Marketing: marketing@dextools.io</li>
+          </ul>
+        </div>
+      
+        
+      </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        // JavaScript code to store correct options
+        const correctOptions = {
+            'bitcoin': 'Peer-to-peer network',
+            'ethereum': 'Decentralized platform',
+            'litecoin': 'Different hashing algorithm',
+            'ripple': 'Real-time gross settlement system'
+        };
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const quizBtns = document.querySelectorAll('.quiz-btn');
+
+            quizBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quiz = this.parentElement.querySelector('.quiz');
+                    quiz.style.display = 'block';
+                    this.style.display = 'none';
+                });
+            });
+
+            const submitButtons = document.querySelectorAll('.submit-answer');
+
+            submitButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quiz = this.parentElement;
+                    const options = quiz.querySelectorAll('.option input');
+                    const resultPara = quiz.querySelector('.result');
+                    const restartBtn = quiz.querySelector('.restart-quiz');
+
+                    let selectedAnswer = '';
+
+                    options.forEach(option => {
+                        if (option.checked) {
+                            selectedAnswer = option.value;
+                        }
+                    });
+
+                    const correctAnswer = correctOptions[quiz.parentElement.querySelector('h2').textContent.toLowerCase()];
+
+                    if (selectedAnswer === correctAnswer) {
+                        resultPara.textContent = 'Correct!';
+                        resultPara.style.color = 'green';
+                    } else {
+                        resultPara.textContent = 'Incorrect. Try again!';
+                        resultPara.style.color = 'red';
+                    }
+
+                    options.forEach(option => {
+                        option.disabled = true;
+                    });
+
+                    this.disabled = true;
+                    restartBtn.style.display = 'block';
+                });
+            });
+
+            const restartButtons = document.querySelectorAll('.restart-quiz');
+
+            restartButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quiz = this.parentElement;
+                    const options = quiz.querySelectorAll('.option input');
+                    const submitBtn = quiz.querySelector('.submit-answer');
+                    const resultPara = quiz.querySelector('.result');
+                    const quizBtn = quiz.previousElementSibling;
+
+                    options.forEach(option => {
+                        option.checked = false;
+                        option.disabled = false;
+                    });
+
+                    submitBtn.disabled = false;
+                    resultPara.textContent = '';
+                    this.style.display = 'none';
+                    quizBtn.style.display = 'block';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
