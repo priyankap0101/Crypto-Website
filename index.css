@@ -99,6 +99,13 @@ header {
       font-weight: bold; /* Set font weight */
      
 }
+@media only screen and (max-width: 768px)
+{
+  h1.logo {
+  margin-top: -29rem;
+}
+}
+
 
 /* Style for button hover state */
 .sign-up:hover {

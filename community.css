@@ -85,7 +85,12 @@ header {
       justify-content: flex-end;
     }
   }
-
+  @media only screen and (max-width: 768px)
+{
+  h2.logo {
+  margin-top: -29rem;
+}
+}
 /* Style for the button */
 .sign-up {
     background-color: #138c72; /* Blue background color */
