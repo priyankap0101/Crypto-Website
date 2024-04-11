@@ -4,8 +4,118 @@ body {
     padding: 0;
     background: linear-gradient(to bottom, #1e0062 , #480333); /* Gradient background */
     /* background-color: #f5f5f5; */ /* Example with color */
+    height: 200vh;
   }
+ /* Header styles */
+header {
+  background-color: #033757;
+  padding: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles */
+.logo {
+  color: #fff;
+  /* margin: 0; */
+  font-size: 24px;
+  margin-right: 20px; /* Add some right margin to separate the logo from the navigation */
+}
+
+/* Navigation styles */
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin-right: 10px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.nav ul li a:hover {
+  transform: translateY(-3px);
+}
+
+/* Media Queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .logo {
+    margin-top: -20rem;
+    font-size: 20px; /* Adjust logo size for smaller screens */
+    margin-right: 10px; /* Reduce margin for smaller screens */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    margin-right: 11rem;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Additional media query for tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+}
+
+/* Additional media query for larger screens */
+@media only screen and (min-width: 1025px) {
+  .nav ul {
+    justify-content: flex-end;
+  }
+}
+ /* Style for the button */
+ .sign-up {
   
+  background-color: #138c72; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  text-decoration: none; /* Remove default button underline */
+  display: block; /* Make button fill the width of its container */
+  width: 100%; /* Make button fill the width of its container */
+  text-align: center; /* Center align text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-family: Arial, sans-serif; /* Set font family */
+      font-size: 16px; /* Set font size */
+      font-weight: bold; /* Set font weight */
+     
+}
+
+/* Style for button hover state */
+.sign-up:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for button active state */
+.sign-up:active {
+  background-color: #004080; /* Even darker blue when button is clicked */
+}
+
+/* Media Queries */
+
   .container {
     margin: 20px auto;
     padding: 40px; /* Increase padding for more space */
@@ -22,6 +132,7 @@ body {
     color: #ffffff;
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 0rem;
     font-size: 2rem;
   }
   h1.aos-init.aos-animate {
@@ -76,3 +187,147 @@ body {
     }
   }
   
+.footer {
+  /* background-color: #000918; */
+  color: #fff;
+  padding: 20px 0;
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  color: #a19797; /* Change to the color you want */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-links ul li a:hover {
+  color: #f98d12; /* Change to the hover color you want */
+}
+
+.footer-social a {
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  display: conte;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-bottom .dropdown {
+  margin-left: 20px;
+}
+
+.footer-social a i {
+  color: #ffffff; /* Default color */
+  font-size: 34px; /* Set the font size of the icons */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  margin: 1rem;
+}
+
+.footer-social a:hover i {
+  /* Change to your desired color on hover */
+  transform: scale(1.2); /* Scale the icon to 120% on hover */
+}
+.footer-nav ul {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-right: 20px; /* Add spacing between list items */
+}
+
+.footer-nav li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+.footer-nav {
+  text-align: center; /* Center-align the content */
+}
+
+.footer-nav ul {
+  display: inline-block; /* Display the list items inline */
+  padding: 0;
+}
+
+.footer-nav li {
+  display: inline; /* Display the list items inline */
+  margin: 0 10px; /* Add some margin between the list items */
+}
+
+.footer-nav select {
+  margin: 0 10px; /* Add margin to the dropdown */
+}
+
+.dropdown {
+  display: inline-block; /* Display the dropdown inline */
+  vertical-align: middle; /* Align the dropdown vertically */
+}
+.footer-nav a {
+  color: grey; /* Change the color to red */
+  text-decoration: none; /* Remove underline */
+}
+.dropdown select {
+  border: 1px solid #ccc; /* Add gray border */
+  padding: 5px; /* Add padding */
+  font-size: 16px; /* Adjust font size */
+  border-radius: 5px; /* Add border radius */
+  background-color: #fff; /* Set background color */
+}
+
+.dropdown select:hover {
+  border-color: #999; /* Change border color on hover */
+}
+
+/* footer legal */
+.footer-legal {
+  text-align: center;
+  /* margin-left: 30rem; */
+  margin-top: 2rem;
+  color: gray;
+  height: 6rem;
+}
+.footer-legal ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.footer-legal li {
+  display: inline-block; /* Display items in the same line */
+  margin-right: 10px; /* Add space between items */
+}
+
+.footer-legal li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.footer-legal li:nth-child(4),
+.footer-legal li:nth-child(5) {
+  display: block; /* Display spans in a new line */
+}

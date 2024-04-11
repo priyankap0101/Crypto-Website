@@ -4,12 +4,115 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+/* Header styles */
 header {
-    background-color: #144f71;
-    color: #fff;
-    padding: 10px ;
-    text-align: center;
+  background-color: #033757;
+  padding: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/* Logo styles */
+.logo {
+  color: #fff;
+  /* margin: 0; */
+  font-size: 24px;
+  margin-right: 20px; /* Add some right margin to separate the logo from the navigation */
+}
+
+/* Navigation styles */
+.nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin-right: 10px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.nav ul li a:hover {
+  transform: translateY(-3px);
+}
+
+/* Media Queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .logo {
+    margin-top: -20rem;
+    font-size: 20px; /* Adjust logo size for smaller screens */
+    margin-right: 10px; /* Reduce margin for smaller screens */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    margin-right: 11rem;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Additional media query for tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+}
+
+/* Additional media query for larger screens */
+@media only screen and (min-width: 1025px) {
+  .nav ul {
+    justify-content: flex-end;
+  }
+}
+ /* Style for the button */
+ .sign-up {
+  
+  background-color: #138c72; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  text-decoration: none; /* Remove default button underline */
+  display: block; /* Make button fill the width of its container */
+  width: 100%; /* Make button fill the width of its container */
+  text-align: center; /* Center align text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-family: Arial, sans-serif; /* Set font family */
+      font-size: 16px; /* Set font size */
+      font-weight: bold; /* Set font weight */
+     
+}
+
+/* Style for button hover state */
+.sign-up:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for button active state */
+.sign-up:active {
+  background-color: #004080; /* Even darker blue when button is clicked */
+}
+
+
 
 .container {
     height: 100vh;

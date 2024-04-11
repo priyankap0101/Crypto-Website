@@ -19,62 +19,84 @@ body {
 }
 
 /* Styling for header */
+/* Header styles */
 header {
-  background-color: #033757; /* Change to blue color */
+  background-color: #033757;
   padding: 18px;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo styles */
 .logo {
   color: #fff;
-  margin: 0;
+  /* margin: 0; */
+  font-size: 24px;
+  margin-right: 20px; /* Add some right margin to separate the logo from the navigation */
 }
 
-.nav {
-  padding: 10px;
-  flex-basis: 100%;
-}
-
+/* Navigation styles */
 .nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  text-align: center;
+  display: flex;
 }
 
 .nav ul li {
-  display: block;
-  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 .nav ul li a {
-  display: inline-block;
+  display: block;
   color: #fff;
   text-decoration: none;
-  padding: 17px;
+  padding: 10px 15px;
   border-radius: 15px;
-  
-  transition: transform 0.3s, box-shadow 0.3s;
-
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .nav ul li a:hover {
-  transform: translateY(-3px); /* Move element up on hover */
-  /* box-shadow: 0 6px 10px rgba(0, 123, 255, 0.2);  */
+  transform: translateY(-3px);
 }
 
-/* Change the text style */
-.nav ul li a {
-  font-weight: bolder; /* Bold font weight */
-  font-size: 1.2rem; /* Font size */
-  letter-spacing: 1px; /* Letter spacing */
+/* Media Queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .logo {
+    margin-top: -20rem;
+    font-size: 20px; /* Adjust logo size for smaller screens */
+    margin-right: 10px; /* Reduce margin for smaller screens */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    margin-right: 11rem;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* Additional media query for tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+}
+
+/* Additional media query for larger screens */
+@media only screen and (min-width: 1025px) {
+  .nav ul {
+    justify-content: flex-end;
+  }
 }
  /* Style for the button */
  .sign-up {
@@ -105,31 +127,7 @@ header {
   background-color: #004080; /* Even darker blue when button is clicked */
 }
 
-/* Media Queries */
-@media only screen and (min-width: 600px) {
-  .nav {
-    flex-basis: auto;
-  }
 
-  .nav ul {
-    display: flex;
-    justify-content: center;
-  }
-
-  .nav ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-}
-
-  /* Additional media query for tablets */
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .nav ul li {
-      display: inline-block;
-      margin-right: 15px;
-      margin-bottom: 0;
-    }
-  }
 
 /* Media Query for small devices */
 h1,
@@ -374,7 +372,7 @@ img {
   </head>
   <body>
     <header data-aos="fade-in" data-aos-duration="1000">
-      <h1 class="logo">CoinMarketCap</h1>
+      <h2 class="logo">CoinMarketCap</h2>
       <nav class="nav" data-aos="fade-in" data-aos-duration="1000">
         <ul>
           <li><a href="./index.html">Home</a></li>
@@ -574,10 +572,10 @@ img {
             <li>
             </li>
             <li>
-              DEXT Token</li>
+              Uranus Token</li>
           </div>
-          <li>© DEXTools.io 2024 - 2.80.1 - info@dextools.io | Ads & Marketing:
-            marketing@dextools.io</li>
+          <li>© Uranus.io 2024 - 2.80.1 - info@Uranus.io | Ads & Marketing:
+            marketing@Uranus.io</li>
         </ul>
       </div>
 
