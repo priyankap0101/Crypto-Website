@@ -24,6 +24,6 @@ Welcome to our Crypto Website! This website is built using HTML, CSS, and JavaSc
 
 ## Deployed Link
 
-- **Check out the live website at https://uranusmemes.netlify.app/learn**
+- **Check out the live website at https://uranusmemes.netlify.app/**
 
 Feel free to explore and interact with our website! If you have any questions or feedback, don't hesitate to reach out.
